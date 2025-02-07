@@ -10,7 +10,7 @@ app.get('/', async (req, res) => {
         const url = `https://api.mymemory.translated.net/get?q=${text}&langpair=${source}|${target}`;
         const response = await fetch(url);
         const json = await response.json();
-        const match = await json.match;
+        const match = await json.matches;
         const answer = match[match.length - 1].translation || 'No translation found';
         res.send(answer);
     } catch (error) {
